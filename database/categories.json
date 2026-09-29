@@ -1,0 +1,54 @@
+{
+  "categories": [
+    {
+      "name": "Academic",
+      "icon": "📚",
+      "subcategories": [
+        "Books",
+        "Notes",
+        "Calculators"
+      ]
+    },
+    {
+      "name": "Electronics",
+      "icon": "💻",
+      "subcategories": [
+        "Laptops",
+        "Chargers",
+        "Accessories"
+      ]
+    },
+    {
+      "name": "Media",
+      "icon": "🎬",
+      "subcategories": [
+        "Cameras",
+        "Speakers"
+      ]
+    },
+    {
+      "name": "Outdoor",
+      "icon": "🏏",
+      "subcategories": [
+        "Sports",
+        "Camping"
+      ]
+    },
+    {
+      "name": "Tools",
+      "icon": "🛠️",
+      "subcategories": [
+        "Hand Tools",
+        "Repair"
+      ]
+    },
+    {
+      "name": "Events",
+      "icon": "🎉",
+      "subcategories": [
+        "Decor",
+        "Equipment"
+      ]
+    }
+  ]
+}

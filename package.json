@@ -1,0 +1,20 @@
+{
+  "name": "borrowbox",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "db:init": "node database/init.js",
+    "test": "node --env-file=.env.test --test"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.14.5",
+    "helmet": "^8.1.0",
+    "express-rate-limit": "^8.1.0"
+  }
+}

@@ -1,0 +1,1 @@
+function trustScore({completed,onTimeRate,avgRating,cancellations,reviewCount}){if(!completed&&!reviewCount)return{score:50,label:'New member'};const score=Math.max(0,Math.min(100,Math.round(40+Math.min(completed*4,30)+onTimeRate*20+avgRating*2-cancellations*3)));return{score,label:score>=80?'Highly trusted':score>=60?'Trusted':'Building trust'}}module.exports=trustScore;
