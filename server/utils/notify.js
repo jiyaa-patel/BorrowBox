@@ -1,0 +1,1 @@
+async function notify(conn,userId,type,message,{requestId=null,itemId=null}={}){await conn.query('INSERT INTO notifications(user_id,type,message,request_id,item_id) VALUES(?,?,?,?,?)',[userId,type,message,requestId,itemId])}module.exports=notify;

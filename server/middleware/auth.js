@@ -1,0 +1,4 @@
+const jwt=require('jsonwebtoken');const db=require('../db');
+async function load(req,res,next,required){try{const h=req.headers.authorization||'';if(!h.startsWith('Bearer ')){if(required)return res.status(401).json({error:'Authentication required'});return next()}const p=jwt.verify(h.slice(7),process.env.JWT_SECRET);const [[u]]=await db.query('SELECT id,name,email,student_id,phone,department,year,campus_area,role,is_active,created_at FROM users WHERE id=?',[p.id]);if(!u)return res.status(401).json({error:'Invalid token'});if(!u.is_active)return res.status(403).json({error:'Account suspended'});req.user=u;next()}catch(e){return res.status(401).json({error:'Invalid or expired token'})}}
+const auth=(req,res,next)=>load(req,res,next,true);const optionalAuth=(req,res,next)=>load(req,res,next,false);const requireRole=(...roles)=>(req,res,next)=>roles.includes(req.user.role)?next():res.status(403).json({error:'Forbidden'});
+module.exports={auth,optionalAuth,requireRole};
