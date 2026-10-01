@@ -1,22 +1,72 @@
 # BorrowBox
 
-Peer-to-peer campus borrowing app using Express, MySQL and a plain HTML/CSS/JS frontend.
+BorrowBox is a peer-to-peer campus borrowing application that allows students to list, discover, and request items within their campus community.
 
-## Setup
-1. Copy `.env.example` to `.env` and `.env.test.example` to `.env.test`.
-2. Create/configure a MySQL user with permission to create the configured databases.
-3. `npm install`
-4. `npm run db:init`
-5. `npm test`
-6. `npm run dev`
+## Table of Contents
 
-Current batch implements Steps 1-5: project/database seed, authentication, shared landing layout, item CRUD/listing UI, and search/filters/geolocation.
+- [Overview](#overview)
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Project Structure](#project-structure)
+- [Setup](#setup)
+- [Testing](#testing)
+- [Framework Audit](#framework-audit)
+- [Website Flow](#website-flow)
 
-## Framework audit
-- Bootstrap: navbar, forms, validation, modals, alerts, accordion, dropdown.
-- Tailwind: item cards, badges, dashboard, profile, stats.
-- Vue 3: requests panel only.
-- Tailwind preflight is disabled to avoid Bootstrap resets.
+## Overview
 
-## Unified website flow
-The landing page is now the main BorrowBox entry point: hero → live stats → categories → recent listings → five-step borrow journey → safety/FAQ → CTA. The shared navbar continues that journey through Browse, List an Item, Requests, Borrow List, Dashboard, Profile and Admin (for admins). Existing Express/MySQL endpoints are unchanged.
+BorrowBox provides a platform for students to share and borrow useful items within their campus community.
+
+The application includes authentication, item listing and management, searching and filtering, borrowing requests, geolocation, dashboards, profiles, and administrative functionality.
+
+## Features
+
+- User authentication
+- Item listing and management
+- Browse and search items
+- Search and filtering
+- Geolocation support
+- Borrowing requests
+- Borrow list
+- Dashboard
+- User profile
+- Admin functionality
+- Shared landing page and navigation
+- Safety information and FAQ
+
+## Technology Stack
+
+### Frontend
+
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
+- Tailwind CSS
+- Vue 3
+
+### Backend
+
+- Node.js
+- Express.js
+
+### Database
+
+- MySQL
+
+## Project Structure
+
+```text
+BorrowBox/
+│
+├── client/       # Frontend files and user interface
+├── server/       # Express backend and API implementation
+├── database/     # Database configuration and initialization
+├── tests/        # Project tests
+│
+├── .env.example
+├── .env.test.example
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── README.md
