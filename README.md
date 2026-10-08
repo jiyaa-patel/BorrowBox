@@ -46,3 +46,8 @@ Running `npm run db:init` seeds 10 synthetic student accounts and demo campus ac
 | 24bce225@nirmauni.ac.in | 24BCE225 |
 
 These are demo-only credentials. Change/remove the seed before any real deployment.
+
+## Deploying to Vercel
+This copy is already prepared for Vercel: the pages are in `public/`, `index.js` at the root exports the Express app, the database connection supports a port and TLS, and the campus timezone is set in code. See the step-by-step deployment guide for the full walkthrough (hosted MySQL, GitHub, Vercel import, environment variables).
+
+Environment variables to add in Vercel: `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`, `DB_SSL=true`, `JWT_SECRET`, `ADMIN_EMAIL`, `ADMIN_PASSWORD` (see `.env.example`).

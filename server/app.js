@@ -2,9 +2,12 @@ const path=require('path');
 const express=require('express');
 const helmet=require('helmet');
 const app=express();
+// Behind Vercel's proxy: use the real client IP (X-Forwarded-For) so rate limits apply per user, not to all users at once.
+app.set('trust proxy',1);
 app.use(helmet({contentSecurityPolicy:false}));
 app.use(express.json({limit:'50kb'}));
-app.use(express.static(path.join(__dirname,'..','client')));
+// Used by `npm start` locally. On Vercel this line is ignored and the CDN serves the public/ folder instead.
+app.use(express.static(path.join(__dirname,'..','public')));
 app.get('/api/health',(req,res)=>res.json({ok:true}));
 app.use('/api/auth',require('./routes/auth'));
 app.use('/api/geo',require('./routes/geo'));

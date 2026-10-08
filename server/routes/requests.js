@@ -7,7 +7,7 @@ const {handoverLimit}=require('../middleware/rate');
 const notify=require('../utils/notify');
 const r=express.Router();
 r.use(auth);
-const day=()=>new Date().toLocaleDateString('en-CA');
+const {today:day}=require('../utils/dates');
 const validId=x=>/^\d+$/.test(String(x));
 
 async function expire(){
